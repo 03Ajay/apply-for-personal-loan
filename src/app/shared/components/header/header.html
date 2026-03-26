@@ -1,0 +1,54 @@
+<!-- header.html -->
+<nav class="navbar w-100">
+    <div class="header-display">
+        <div class="container-fluid">
+            @if (!isMobile) {
+            <div class="d-flex hide-on-mobile">
+                <img fetchpriority="high" [src]="imageUrl" alt="Bajaj Markets Logo" height="36"
+                    class="loader-img header-company-logo" (error)="imageUrl = 'assets/images/fallback-logo.png'" />
+            </div>
+            }
+
+            <div class="text-white display-center">
+                @if (isBackButtonVisible) {
+                <span class="back-arrow arrow ms-2" (click)="onBackArrowClickFn()"></span>
+                }
+
+                @if (!isMobile) {
+                <div class="partition hide-on-mobile"></div>
+                }
+
+                <div class="main-header-text">
+                    {{ headerText }}
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="d-flex justify-content-end right-gap">
+            @if (isInfoIconVisible) {
+            <div class="page-info-icon" (click)="onPageInfoClickFn()">
+                <img src="assets/images/png/page-info.png" height="24" width="24" alt="info" />
+            </div>
+            }
+
+            @if (langFlag && isLanguageOptionVisible) {
+            <div class="language-selector">
+                <div class="custom-select-wrapper">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xNy41NDcgMTBIMTUuODhhLjgzNC44MzQgMCAwIDAgMCAxLjY2NnYxLjY2N2gtLjk4N2MuMS0uMjY3LjE1MS0uNTUuMTU0LS44MzRhMi41IDIuNSAwIDAgMC00LjY2NS0xLjI1LjgzMy44MzMgMCAxIDAgMS40NDQuODMzLjgzNC44MzQgMCAxIDEgLjcyMSAxLjI1LjgzMy44MzMgMCAxIDAgMCAxLjY2Ny44MzQuODM0IDAgMSAxLS43MjEgMS4yNS44MzMuODMzIDAgMSAwLTEuNDQ0LjgzMyAyLjUgMi41IDAgMCAwIDQuNjY1LTEuMjUgMi40NzIgMi40NzIgMCAwIDAtLjE1NC0uODMzaC45ODd2Mi41YS44MzMuODMzIDAgMCAwIDEuNjY3IDB2LTUuODMzYS44MzMuODMzIDAgMCAwIDAtMS42Njd6bS05Ljk3NS0uNjMyYS44MzMuODMzIDAgMSAwIDEuNjE2LS40MDRMNy43MjQgMy4xMDZhMS45IDEuOSAwIDAgMC0zLjY4NyAwTDIuNTcyIDguOTY0YS44MzMuODMzIDAgMSAwIDEuNjE3LjQwNEw0LjY1NSA3LjVoMi40NWwuNDY2IDEuODd6bS0yLjUtMy41MzUuNTgxLTIuMzIzYS4yNDQuMjQ0IDAgMCAxIC40NTUgMGwuNTggMi4zMjNINS4wNzR6bTYuNjQyIDBoLjgzM2EuODM0LjgzNCAwIDAgMSAuODMzLjgzM3YuODMzYS44MzMuODMzIDAgMSAwIDEuNjY3IDB2LS44MzNhMi41MDMgMi41MDMgMCAwIDAtMi41LTIuNWgtLjgzM2EuODMzLjgzMyAwIDEgMCAwIDEuNjY3em0tMy4zMzQgNy41aC0uODMzYS44MzQuODM0IDAgMCAxLS44MzMtLjgzNHYtLjgzM2EuODMzLjgzMyAwIDEgMC0xLjY2NyAwdi44MzNhMi41MDMgMi41MDMgMCAwIDAgMi41IDIuNWguODMzYS44MzMuODMzIDAgMSAwIDAtMS42NjZ6IiBmaWxsPSIjRjUwIi8+Cjwvc3ZnPgo="
+                        class="select-icon" alt="" />
+
+                    <select #langSelect (change)="onLanguageChange(langSelect.value)" [(ngModel)]="currentLang"
+                        class="language-selection">
+                        @for (lang of i18nService.displayLanguages; track lang.value) {
+                        <option [value]="lang.value">
+                            {{ lang.name }}
+                        </option>
+                        }
+                    </select>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</nav>
