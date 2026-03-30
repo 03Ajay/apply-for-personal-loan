@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonDesktopSidebar } from "../common-desktop-sidebar/common-desktop-sidebar";
 
 @Component({
   selector: 'app-personal-loan',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CommonDesktopSidebar],
   templateUrl: './personal-loan.html',
   styleUrl: './personal-loan.scss',
 })

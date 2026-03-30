@@ -2,58 +2,6 @@
     background-color: #f8f9fa;
 }
 
-/* ================= LEFT SECTION ================= */
-
-.left-section {
-    padding-left: 4rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.illustration {
-    width: 160px;
-    height: 240px;
-    margin-right: 1rem;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-main,
-.logo-sub {
-    font-size: 1.7rem;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.logo-main {
-    text-align: center;
-}
-
-.loan-text {
-    h2 {
-        font-size: 28px;
-        color: #212529;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        margin-left: 1.5rem;
-    }
-
-    p {
-        font-size: 18px;
-        color: #aaaaaa;
-        margin-left: 1.5rem;
-    }
-}
-
 /* ================= RIGHT SECTION ================= */
 
 .right-section {
@@ -125,32 +73,149 @@
 }
 
 /* ================= FORM ================= */
-
-.form-label {
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
+.form-group {
+  height: auto;
+  margin-bottom: 24px;
 }
 
-.form-control {
-    background-color: #f4f4f4;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
-
-    &:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.1);
-    }
+.form-control:focus,
+.input-group>.form-control:focus,
+.form-control[readonly]:not(:placeholder-shown) {
+  padding: 24px 18px 4px 18px;
 }
 
-.text-muted {
+.form-control,
+.input-group>.form-control {
+  border: 1px solid #e0e0e0;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 18px;
+}
+
+.input-group.box-border .form-control,
+.input-group.box-border .form-control:focus {
+  background: #f4f4f4;
+}
+
+.text-danger>div,
+.text-danger {
+  font-size: 12px;
+}
+
+.form-control::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.input-group {
+  padding-bottom: 4px;
+}
+
+.floating-label,
+select[value=''] {
+  position: absolute;
+  font-weight: 400;
+  // font-family: $lato-regular-font;
+  font-size: 12px;
+  // top: 0%;
+  // left: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  margin: 8px 0px 4px 16px !important;
+}
+
+// Country code
+.input-group.box-border>.form-control.mob-number:focus,
+.input-group.box-border>.form-control.mob-number:not(:placeholder-shown) {
+  padding: 24px 18px 4px 42px !important;
+
+  &~.country-code {
     display: block;
-    margin-top: 0.3rem;
-    font-size: 0.8rem;
-    color: #888 !important;
+  }
+}
+
+.input-group.box-border>.form-control.pin-code:focus,
+.input-group.box-border>.form-control.pin-code:not(:placeholder-shown) {
+  padding: 24px 18px 4px 18px !important;
+}
+
+.input-group.box-border>.form-control.otp-input:focus,
+.input-group.box-border>.form-control.otp-input:not(:placeholder-shown) {
+  padding: 14px 18px !important;
+}
+
+.input-group.box-border>.form-control:not(:placeholder-shown),
+.input-group.box-border>.form-control[readonly]:not(:placeholder-shown) {
+  padding: 24px 18px 4px 16px;
+}
+
+.country-code {
+  display: none;
+  position: absolute;
+  left: 14px;
+  top: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 9;
+}
+
+input:focus+.floating-label,
+input:not(:placeholder-shown)+.floating-label,
+input[readonly]+.floating-label,
+select:focus+.floating-label,
+select.ng-valid+.floating-label,
+select:disabled+.floating-label {
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  z-index: 999;
+  color: #111;
+}
+
+input:focus,
+select:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+
+.guidance-text {
+    display: block;
+  font-size: 14px;
+  color: #888;
+  margin-left: 4px;
 }
 
 /* ================= CHECKBOX ================= */
@@ -203,50 +268,6 @@
 
 .lock-icon {
     margin-right: 0.3rem;
-}
-
-/* ================= STEPS ================= */
-
-.steps {
-    margin-top: 40px;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        left: 17px;
-        top: 10px;
-        height: 200px;
-        border-left: 2px dashed #2a7bc0;
-    }
-}
-
-.step {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.circle {
-    width: 35px;
-    height: 35px;
-    background: #1f6fb2;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 16px;
-    border: 3px dotted #7fb2e1;
-}
-
-.text {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1b1b1b;
 }
 
 /* ================= RESPONSIVE ================= */

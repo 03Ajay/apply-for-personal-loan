@@ -1,111 +1,92 @@
 <div class="main-wrapper">
-    <div class="row">
-
-        <!-- LEFT SIDE -->
-        <div class="col-md-7 left-section flex-column justify-content-center">
-
-            <div class="logo-area">
-                <img src="https://bfsd.npq.bfsgodirect.com/apply-for-personal-loan-finservmarkets/assets/images/svg/left-side-img-sol.svg"
-                    class="illustration">
-                <div class="logo-text">
-                    <div class="logo-main">Bajaj Markets</div>
-                    <div class="logo-sub">India ka Financial Supermarket</div>
-                </div>
-            </div>
-
-            <div class="loan-text">
-                <h2>A loan for all your needs!</h2>
-                <p>Choose the best Personal Loan and realize your dream</p>
-
-            </div>
-            <p class="loan-step">Your application stages : </p>
-            <div class="steps">
-                <div class="step">
-                    <div class="circle">1</div>
-                    <span>Your Details</span>
-                </div>
-                <div class="step">
-                    <div class="circle">2</div>
-                    <span>Loan Offers</span>
-                </div>
-                <div class="step">
-                    <div class="circle">3</div>
-                    <span>Verification > Banking > E-sign</span>
-                </div>
-                <div class="step">
-                    <div class="circle">4</div>
-                    <span>Money In Bank</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- RIGHT SIDE FORM -->
-        <div class="col-md-5 right-section d-flex align-items-center justify-content-center">
-
-            <div class="form-card">
-                <h4 class="mb-4">Select Your Profession</h4>
-
-                <div class="profession-grid">
-                    <div class="profession-card" [class.active]="selectedProfession === 'Salaried'"
-                        (click)="selectProfession('Salaried')">
-                        <h6 class="grid-label">Salaried</h6>
-                        <p>Select, if you receive monthly salary</p>
-                    </div>
-                    <div class="profession-card" [class.active]="selectedProfession === 'Self Employed'"
-                        (click)="selectProfession('Self Employed')">
-                        <h6 class="grid-label">Self Employed</h6>
-                        <p>Select, if you run your own business</p>
-                    </div>
-                    <div class="profession-card" [class.active]="selectedProfession === 'Doctor'"
-                        (click)="selectProfession('Doctor')">
-                        <h6 class="grid-label">Doctor</h6>
-                        <p>Select, if you are working as a doctor</p>
-                    </div>
-                    <div class="profession-card" [class.active]="selectedProfession === 'CA/CS/CWA'"
-                        (click)="selectProfession('CA/CS/CWA')">
-                        <h6 class="grid-label">CA/CS/CWA</h6>
-                        <p>Select if you are CA/CS/CWA in your firm</p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <!-- <label class="form-label">Mobile Number</label> -->
-                    <input type="text" class="form-control" placeholder="Mobile Number">
-                    <small class="text-muted">Your OTP will be sent to this number</small>
-                </div>
-
-                <div class="mt-4">
-                    <!-- <label class="form-label">Pincode</label> -->
-                    <input type="text" class="form-control" placeholder="Pincode">
-                    <small class="text-muted">Enter your 6-digit current residential PIN code</small>
-                </div>
-
-                <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" id="terms1">
-                    <label class="form-check-label small" for="terms1">
-                        Accept the Statement of Use, Privacy Policy and Credit Report Terms of Use of TUCI BILL and CRIF
-                        Highmark ("CICI") <a href="#">Read more...</a>
-                    </label>
-                </div>
-
-                <div class="form-check mt-2">
-                    <input class="form-check-input" type="checkbox" id="terms2">
-                    <label class="form-check-label small" for="terms2">
-                        I hereby authorize BFDL to share my personal details with your business. <a href="#">Read
-                            more...</a>
-                    </label>
-                </div>
-
-                <button class="btn proceed-btn w-100 mt-4">Proceed</button>
-
-                <div class="secure-text text-center mt-3">
-                    <span class="lock-icon">🔒</span> 100% safe and secure
-                </div>
-
-            </div>
-
-        </div>
-
+  <div class="row">
+    <div class="col-md-7">
+      <app-common-desktop-sidebar></app-common-desktop-sidebar>
     </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <div class="col-md-5 right-section d-flex align-items-center justify-content-center">
+      <div class="form-card">
+        <h4 class="mb-4">Select Your Profession</h4>
+
+        <div class="profession-grid">
+          <div
+            class="profession-card"
+            [class.active]="selectedProfession === 'Salaried'"
+            (click)="selectProfession('Salaried')"
+          >
+            <h6 class="grid-label">Salaried</h6>
+            <p>Select, if you receive monthly salary</p>
+          </div>
+          <div
+            class="profession-card"
+            [class.active]="selectedProfession === 'Self Employed'"
+            (click)="selectProfession('Self Employed')"
+          >
+            <h6 class="grid-label">Self Employed</h6>
+            <p>Select, if you run your own business</p>
+          </div>
+          <div
+            class="profession-card"
+            [class.active]="selectedProfession === 'Doctor'"
+            (click)="selectProfession('Doctor')"
+          >
+            <h6 class="grid-label">Doctor</h6>
+            <p>Select, if you are working as a doctor</p>
+          </div>
+          <div
+            class="profession-card"
+            [class.active]="selectedProfession === 'CA/CS/CWA'"
+            (click)="selectProfession('CA/CS/CWA')"
+          >
+            <h6 class="grid-label">CA/CS/CWA</h6>
+            <p>Select if you are CA/CS/CWA in your firm</p>
+          </div>
+        </div>
+
+        <div class="form-group guidance startWithLabel mt-4">
+          <div class="input-group mobile-input box-border">
+            <input
+              type="tel"
+              class="form-control mob-number"
+              placeholder="Mobile Number"
+              maxlength="10"
+            />
+            <label class="floating-label">Mobile Number</label>
+            <span class="country-code">+91</span>
+            
+          </div>
+          <div class="guidance-text text-muted">Your OTP will be sent to this number</div>
+        </div>
+
+        <div class="mt-4">
+          <!-- <label class="form-label">Pincode</label> -->
+          <input type="text" class="form-control" placeholder="Pincode" />
+          <small class="text-muted">Enter your 6-digit current residential PIN code</small>
+        </div>
+
+        <div class="form-check mt-4">
+          <input class="form-check-input" type="checkbox" id="terms1" />
+          <label class="form-check-label small" for="terms1">
+            Accept the Statement of Use, Privacy Policy and Credit Report Terms of Use of TUCI BILL
+            and CRIF Highmark ("CICI") <a href="#">Read more...</a>
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" id="terms2" />
+          <label class="form-check-label small" for="terms2">
+            I hereby authorize BFDL to share my personal details with your business.
+            <a href="#">Read more...</a>
+          </label>
+        </div>
+
+        <button class="btn proceed-btn w-100 mt-4">Proceed</button>
+
+        <div class="secure-text text-center mt-3">
+          <span class="lock-icon">🔒</span> 100% safe and secure
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
